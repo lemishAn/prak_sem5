@@ -65,8 +65,7 @@ def Transformation(num):
 		lst.add(key)
 	return lst
 
-if __name__ == '__main__':
-	print("enot")
-	number = int(input())
-	lst = Transformation(number)
-	print(lst.__str__())
+# if __name__ == '__main__':
+# 	number = input()
+# 	lst = Transformation(number)
+# 	print(lst.__str__())
