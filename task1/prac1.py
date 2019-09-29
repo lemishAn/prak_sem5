@@ -59,13 +59,13 @@ class MyList(object):
 
 def Transformation(num):
 	lst = MyList()
-	while num != 0:
-		key = num % 10
-		num //= 10
+	while num != '':
+		key = num[-1]
+		num = num[0:-1]
 		lst.add(key)
 	return lst
 
-# if __name__ == '__main__':
-# 	number = input()
-# 	lst = Transformation(number)
-# 	print(lst.__str__())
+if __name__ == '__main__':
+	number = input()
+	lst = Transformation(number)
+	print(lst.__str__())

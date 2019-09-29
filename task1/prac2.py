@@ -82,7 +82,7 @@ def Sum(lst1, lst2):
 	lst2 = lst2.first
 	key = 0
 	while lenmin > 0:
-		key = key + lst1.value + lst2.value
+		key = key + int(lst1.value) + int(lst2.value)
 		lstsum.add(key % 10)
 		key //= 10
 		lst1 = lst1.next
@@ -91,7 +91,7 @@ def Sum(lst1, lst2):
 		lenmax -= 1
 	while lenmax > 0:
 		if key == 1:
-			lstsum.add(key + lst1.value)
+			lstsum.add(key + int(lst1.value))
 			lst1 = lst1.next
 			lenmax -= 1
 			key = 0
@@ -106,7 +106,7 @@ def Sum(lst1, lst2):
 if __name__ == '__main__':
 	number1 = input()
 	lst1 = Transformation(number1)
-	number2 = int(input())
+	number2 = input()
 	lst2 = Transformation(number2)
 	lstsum = Sum(lst1, lst2)
 	print(lstsum.__str__())
