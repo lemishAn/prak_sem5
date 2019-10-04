@@ -22,19 +22,26 @@ class Graph:
                         F[i] = F[j] + self.matrix[j][i]
         return F
 
-N = int(input('Enter N: '))
 A = input('Enter graph: ')
+N = int(input('Enter N: '))
 X = int(input('Start node: '))
 TIMES = []
 j = -1
+curr = 0
 for i in range(1, len(A) - 1):
     if A[i] == "[":
         TIMES.append([])
         j += 1
         continue
-    if A[i] in ' ],':
+    if A[i] in ' ,':
+        TIMES[j].append(curr)
+        curr = 0
         continue
-    TIMES[j].append(int(A[i]))
+    if A[i] in '0123456789':
+        curr = curr * 10 + int(A[i]) 
+    if A[i] == ']':
+        continue
+TIMES[j].append(curr)
 G = Graph(TIMES, N)
 MAX_ROUTE = max(G.matrix_min(X - 1, N))
 if MAX_ROUTE != 10 ** 9:

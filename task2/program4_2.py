@@ -30,15 +30,22 @@ class Graph:
 
 A = input('Enter graph: ')
 B = []
+curr = 0
 j = -1
 for i in range(1, len(A) - 1):
     if A[i] == '[':
         B.append([])
         j += 1
         continue
-    if A[i] in ' ],':
+    if A[i] in ' ,':
+        B[j].append(curr)
+        curr = 0
         continue
-    B[j].append(int(A[i]))
+    if A[i] in '0123456789':
+        curr = curr * 10 + int(A[i]) 
+    if A[i] == ']':
+        continue       
+B[j].append(curr)
 G = Graph(B)
 NodeStart = int(input('Enter node one: '))
 NodeEnd = int(input('Enter node two: '))
