@@ -3,6 +3,9 @@ import os
 from multiprocessing import Process
 import numpy as np
 from sys import maxsize
+import warnings
+warnings.filterwarnings('ignore')
+
 def mfcc_sign(start_dir, end_dir):
 	for p in sorted(os.listdir(DATA))[start_dir:end_dir]:
 		DATA_PATH = DATA + p

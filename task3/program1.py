@@ -2,6 +2,8 @@ import librosa
 import os
 import time
 import numpy as np
+import warnings
+warnings.filterwarnings('ignore')
 DATA_PATH = ''
 DATA = '/home/anastasia/sem5/test/'
 OUTPUT = '/home/anastasia/sem5/output/'
