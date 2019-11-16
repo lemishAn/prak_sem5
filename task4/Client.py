@@ -24,7 +24,7 @@ with socket.create_connection(("127.0.0.1", 30000)) as sock:
 	command = input("Command = ")
 	if command.upper() != 'STAT' and command.upper() != 'ENTI':
 		command = input('Enter the correct command = ')
-	with open("../../JavaScriptCourse/Tasks/tweets_analysis/input/dataSet.csv", encoding = "ISO8859-1") as f_obj:
+	with open("dataSet.csv", encoding = "ISO8859-1") as f_obj:
 		csv_dict_reader(sock,f_obj, num)
 	if (int(num) < 10) and (command.upper() == 'STAT'):
 		error = sock.recv(4096)
